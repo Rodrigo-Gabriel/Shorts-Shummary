@@ -7,8 +7,8 @@ const app = express()
 app.use(cors())
 
 app.get("/summary/:id", (request, response) => {
-  download()
-  response.send("ID do video:" + request.params.id)
+  download(request.params.id)
+  response.json({ result: "Downalod realizado com sucesso!" })
 })
 
 app.listen(3333, () => console.log("Server is running on port 3333"))
